@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RefactorIQ is now available on Google Cloud Marketplace | Estuate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f5f5f5; --text:#1a1a1a; --muted:#555; --line:#e4e4e4;
+  --red:#b81c2e; --red-ink:#ffffff; --dark:#252528; --pink:#f4b6bd; --card:#ffffff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141416; --surface:#1d1d20; --text:#f1f1f1; --muted:#b0b0b5; --line:#34343a;
+    --red:#e0465a; --red-ink:#141416; --dark:#f1f1f1; --pink:#6b2a33; --card:#1d1d20;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1d1d20; --text:#f1f1f1; --muted:#b0b0b5; --line:#34343a;
+  --red:#e0465a; --red-ink:#141416; --dark:#f1f1f1; --pink:#6b2a33; --card:#1d1d20;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.7;font-size:16px}
+a{color:var(--red)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* header */
+header.site{background:var(--bg);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:22px;letter-spacing:.02em;color:var(--red);text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--red)}
+
+/* hero */
+.hero{background:var(--surface);padding:32px 0 48px}
+.crumbs{font-size:13px;color:var(--muted)}
+.crumbs a{color:var(--muted)}
+.hero h1{font-size:clamp(30px,5vw,44px);line-height:1.15;margin:14px 0 14px;max-width:18em;letter-spacing:-.01em}
+.hero .sub{font-size:19px;color:var(--muted);max-width:42em;margin:0 0 14px;line-height:1.5}
+.meta{font-size:13px;color:var(--muted)}
+.banner{margin-top:32px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.banner .bar{height:8px;background:linear-gradient(90deg,var(--red) 66%,var(--dark) 66%)}
+.banner .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;padding:40px 32px 28px;align-items:center}
+.banner h2{font-size:clamp(26px,4vw,40px);line-height:1.15;margin:0;max-width:11em}
+.shapes{position:relative;height:150px}
+.shapes i{position:absolute;right:-20px;display:block;transform:skewX(-30deg)}
+.shapes i:nth-child(1){top:0;width:62%;height:40px;background:var(--red)}
+.shapes i:nth-child(2){top:54px;width:90%;height:40px;background:var(--dark)}
+.shapes i:nth-child(3){top:108px;width:55%;height:40px;background:var(--pink)}
+.lockup{grid-column:1/-1;display:flex;justify-content:flex-end;align-items:baseline;gap:14px;font-size:clamp(18px,3vw,28px)}
+.lockup b{font-weight:700;letter-spacing:-.02em}
+.lockup b span{color:var(--red)}
+.lockup em{font-style:normal;color:var(--muted)}
+
+/* body */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;padding:48px 0 64px}
+article{max-width:680px}
+article p{margin:0 0 20px}
+article h2{font-size:24px;line-height:1.3;margin:40px 0 12px}
+article ul{padding-left:22px;margin:0 0 20px}
+article li{margin-bottom:8px}
+.lede{font-size:18px}
+blockquote{margin:36px 0;padding:24px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+blockquote .mark{color:var(--red);font-size:64px;line-height:.6;display:block;font-weight:700;height:28px}
+blockquote p{font-size:22px;line-height:1.5;font-weight:500;margin:0 0 20px}
+.cta-box{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px;margin-top:40px}
+.cta-box h2{margin:0 0 10px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;border:1.5px solid var(--text);color:var(--text);background:transparent;text-align:center}
+.btn:hover{background:var(--surface)}
+.btn.primary{background:var(--red);border-color:var(--red);color:var(--red-ink)}
+.btn.primary:hover{filter:brightness(.92)}
+
+/* sidebar */
+aside .card{border:1px solid var(--line);border-radius:12px;padding:22px;background:var(--card);margin-bottom:20px}
+aside h3{font-size:17px;margin:0 0 16px}
+aside .btn{display:block;margin-bottom:10px}
+aside .more{font-size:14px}
+aside .details{background:var(--surface);border:0}
+aside .details h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+aside dl{margin:0;font-size:14px;line-height:1.6}
+aside dt{display:inline;font-weight:700}
+aside dd{display:inline;margin:0}
+aside dd::after{content:"";display:block;margin-bottom:6px}
+.sticky{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px)}
+
+footer.site{background:var(--surface);border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer.site .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
+footer.site a{color:var(--muted)}
+footer.site span a{margin-left:16px}
+
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;gap:32px}
+  .sticky{position:static}
+  aside{order:-1}
+  .banner .inner{grid-template-columns:1fr;padding:28px 20px 20px}
+  .shapes{height:120px}
+  .shapes i{height:30px}
+  .shapes i:nth-child(2){top:42px}
+  .shapes i:nth-child(3){top:84px}
+  .lockup{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="https://www.estuate.com">ESTUATE</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="https://www.estuate.com">Services</a></li>
+        <li><a href="https://www.estuate.com">Expertise</a></li>
+        <li><a href="https://www.estuate.com/solutions/refactoriq/">Solutions</a></li>
+        <li><a href="https://www.estuate.com">Industries</a></li>
+        <li><a href="https://www.estuate.com">Resources</a></li>
+        <li><a href="https://www.estuate.com">Company</a></li>
+        <li><a href="https://www.estuate.com/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="https://www.estuate.com">Newsroom</a> / Press releases</div>
+    <h1>RefactorIQ is now available on Google Cloud Marketplace</h1>
+    <p class="sub">RefactorIQ, Estuate’s AI migration agent for moving Alteryx and Dataprep workflows to Incorta, is now available on Google Cloud Marketplace, giving Google Cloud customers a direct way to buy and start using it.</p>
+    <div class="meta">Milpitas, CA · October 29, 2026</div>
+
+    <div class="banner" role="img" aria-label="RefactorIQ and Google Cloud, now available on Google Cloud Marketplace">
+      <div class="bar"></div>
+      <div class="inner">
+        <h2>RefactorIQ now available on Google Cloud Marketplace</h2>
+        <div class="shapes" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="lockup"><b>Refactor<span>IQ</span></b><em>+</em><em>Google Cloud</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <article>
+    <p class="lede"><strong>On 29th October</strong>, we are pleased to announce that RefactorIQ, Estuate’s agentic AI platform for enterprise migration and modernization, is now available on <a href="https://console.cloud.google.com/marketplace/product/estuate-public/refactoriq-analytics">Google Cloud Marketplace</a>. Google Cloud customers can now access RefactorIQ directly through the Marketplace, with streamlined procurement, automated onboarding, and billing consolidated into their existing Google Cloud account.</p>
+
+    <h2>What is RefactorIQ?</h2>
+    <p><a href="https://www.estuate.com/solutions/refactoriq/">RefactorIQ</a> is Estuate’s family of agentic AI solutions built for complex enterprise upgrade, migration, and modernization programs. The platform analyzes existing workflows, identifies dependencies, assesses risk, and automates refactoring, reducing the manual effort and hidden risk that typically slow down large-scale transformations.</p>
+
+    <h2>Alteryx and Dataprep to Incorta migration, now on Google Cloud Marketplace</h2>
+    <p>The Marketplace listing covers RefactorIQ’s AI migration agent for data analytics modernization, helping organizations move from tools like Alteryx Designer and Google Dataprep into a governed Incorta data model. RefactorIQ agents analyze existing ETL pipelines, generate structured implementation proposals, and produce SQL pipelines, documentation, and audit trails, giving data engineering and analytics teams a faster, more reliable path to modernization.</p>
+
+    <blockquote>
+      <span class="mark" aria-hidden="true">“</span>
+      <p>Data teams shouldn’t have to spend months manually rebuilding workflows to modernize. With RefactorIQ on Google Cloud Marketplace, our customers can buy through their existing Google Cloud account and start migrating faster, with the documentation and audit trails their teams need.</p>
+    </blockquote>
+
+    <h2>What this means for Google Cloud customers</h2>
+    <p>For enterprise IT leaders, data teams, and technology decision-makers already on Google Cloud, the RefactorIQ listing removes the friction that typically slows adoption of a new platform. Customers can now:</p>
+    <ul>
+      <li>Subscribe directly through Google Cloud Marketplace without a separate vendor procurement process</li>
+      <li>Apply existing Google Cloud committed spend toward RefactorIQ, maximizing the value of cloud investments already in place</li>
+      <li>Consolidate billing into a single Google Cloud invoice alongside other services</li>
+      <li>Get up and running faster, with onboarding, billing, and runtime fully integrated with the Google Cloud environment</li>
+    </ul>
+
+    <div class="cta-box" id="get-started">
+      <h2>Get started with RefactorIQ</h2>
+      <p>RefactorIQ is available now on Google Cloud Marketplace. Existing Google Cloud customers can subscribe directly from the console. Organizations interested in a personalized walkthrough can also request a demo to explore how RefactorIQ applies to their specific migration or modernization needs.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://console.cloud.google.com/marketplace/product/estuate-public/refactoriq-analytics">Explore RefactorIQ on Google Cloud Marketplace</a>
+        <a class="btn" href="https://www.estuate.com/solutions/refactoriq/">Learn more about RefactorIQ</a>
+        <a class="btn" href="https://www.estuate.com/contact">Request a demo</a>
+      </div>
+    </div>
+  </article>
+
+  <aside>
+    <div class="sticky">
+      <div class="card">
+        <h3>Get started with RefactorIQ</h3>
+        <a class="btn primary" href="https://www.estuate.com/contact">Request a demo</a>
+        <a class="btn" href="https://console.cloud.google.com/marketplace/product/estuate-public/refactoriq-analytics">Explore on Google Cloud Marketplace</a>
+        <a class="more" href="https://www.estuate.com/solutions/refactoriq/">Learn more about RefactorIQ</a>
+      </div>
+      <div class="card details">
+        <h3>Press release details</h3>
+        <dl>
+          <dt>Date:</dt> <dd>October 29, 2026</dd>
+          <dt>Location:</dt> <dd>Milpitas, CA</dd>
+          <dt>Media contact:</dt> <dd>[Name, email]</dd>
+        </dl>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div>Copyright © 2026 Estuate</div>
+    <span><a href="https://www.estuate.com">Privacy Policy</a><a href="https://www.estuate.com">Cookie Policy</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
